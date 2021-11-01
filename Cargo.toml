@@ -6,6 +6,7 @@ members = [
     "benches/micro",
     "examples/hello_world",
     "examples/httpd",
+    "examples/hermit-cuda",
     "examples/demo",
 ]
 exclude = ["target", "loader", "libhermit-rs"]

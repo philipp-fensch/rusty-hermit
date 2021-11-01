@@ -4,3 +4,6 @@
 [submodule "libhermit-rs"]
 	path = libhermit-rs
 	url = https://github.com/hermitcore/libhermit-rs.git
+[submodule "examples/hermit-cuda/rpc-lib"]
+	path = examples/hermit-cuda/rpc-lib
+	url = https://git-ce.rwth-aachen.de/acs/internal/theses/bachelor/philipp-fensch/rpc-lib

@@ -1,0 +1,15 @@
+[unstable]
+build-std = ["std", "core", "alloc", "panic_abort"]
+build-std-features = ["compiler-builtins-mem"]
+
+[build]
+target = "x86_64-unknown-hermit"
+
+[target.x86_64-unknown-hermit]
+runner = """sudo /usr/libexec/qemu-kvm
+    -cpu host
+    -display none -smp 1 -m 512M -serial stdio
+    -netdev tap,id=net0,ifname=tap10,script=no,downscript=no,vhost=on
+    -device virtio-net-pci,netdev=net0,disable-legacy=on
+    -kernel loader/target/x86_64-unknown-hermit-loader/debug/rusty-loader
+    -initrd"""
