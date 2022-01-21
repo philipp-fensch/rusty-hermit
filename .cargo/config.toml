@@ -5,4 +5,4 @@ build-std = ["std", "core", "alloc", "panic_abort"]
 target = "x86_64-unknown-hermit"
 
 [target.x86_64-unknown-hermit]
-runner = "uhyve -v"
+runner = "sudo /usr/libexec/qemu-kvm -cpu qemu64,apic,fsgsbase,rdtscp,xsave,xsaveopt,fxsr,rdrand  -enable-kvm -display none -smp 1 -m 1G -serial stdio -kernel loader/target/x86_64-unknown-hermit-loader/debug/rusty-loader -netdev tap,id=net0,ifname=tap10,script=no,downscript=no,vhost=off -device virtio-net-pci,netdev=net0,disable-legacy=on -initrd "

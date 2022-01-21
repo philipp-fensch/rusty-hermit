@@ -7,5 +7,6 @@ members = [
     "examples/hello_world",
     "examples/httpd",
     "examples/demo",
+    "examples/tcp_stream"
 ]
 exclude = ["target", "loader", "libhermit-rs"]
